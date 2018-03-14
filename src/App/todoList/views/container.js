@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Todo from './todo';
-import { toggleTodo, removeTodo } from '../actions';
 import * as filterType from '../../../filterType';
 import './index.css';
 
@@ -13,9 +12,8 @@ class TodoList extends React.Component {
     todos.forEach(value => {
       let canPush = false;
       const { id, text, completed } = value;
-      const { toggleCompleted, removeTodo } = this;
       const props = {
-        id, text, completed, toggleCompleted, removeTodo
+        id, text, completed
       };
       switch (filter) {
         case filterType.FILTER_ALL:
@@ -37,16 +35,6 @@ class TodoList extends React.Component {
         vDom.push(<Todo key={id} {...props} />);
     });
     return vDom;
-  }
-
-  toggleCompleted = (id) => {
-    const { dispatch } = this.props;
-    dispatch(toggleTodo(id))
-  }
-
-  removeTodo = (id) => {
-    const { dispatch } = this.props;
-    dispatch(removeTodo(id))
   }
 
   render() {
