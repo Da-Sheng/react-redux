@@ -1,7 +1,7 @@
 import { FILTER_ALL, FILTER_COMPLETED, FILTER_NOTCOMPLETED } from './actiontypes';
 import * as filterType from '../../filterType';
 
-export default (state = [], action) => {
+export default (state = '', action) => {
   switch (action.type) {
     case FILTER_ALL:
       return filterType.FILTER_ALL;

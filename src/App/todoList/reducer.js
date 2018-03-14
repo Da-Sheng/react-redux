@@ -9,8 +9,9 @@ export default (state = [], action) => {
     case TOGGLE_TODO:
 
       return state.map(value => {
-        if (value.id === id)
-          value.completed = !value.completed;
+        if (value.id === id) {
+          return {...value, completed: !value.completed};
+        }
         return value;
       });
 

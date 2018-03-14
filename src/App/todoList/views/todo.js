@@ -18,7 +18,7 @@ class Todo extends React.Component {
     let classname = 'todo';
     if (completed)
       classname = 'todo unCompleted';
-    // console.log(this.props)
+    // console.log(`render${id}`)
     return (
       <div key={id} onClick={this.toggleCompleted} className={classname}>
         <div className="todo-text">
